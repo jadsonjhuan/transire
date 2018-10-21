@@ -16,7 +16,18 @@
         <label>Valor (R$) *</label>
         <input [(ngModel)]="produto.valor" type="number" class="form-control col-number" placeholder="0,00" required>
       </div>
+      <div class="col-8 form-group">
+        <label>Imagem</label>
+        <div class="custom-file">
+          <input type="file" id="imagem" accept="image/jpeg" (change)="onFileChange($event)" class="custom-file-input">
+          <label class="custom-file-label" for="customFile">Selecione uma Imagem</label>
+        </div>
+      </div>
+      <div class="col-4 form-group">
+        <img *ngIf="produto.imagem" [src]="produto.imagem" height="72">
+      </div>
       <div class="col-12 form-group" style="text-align: right">
+        <hr/>
         <button (click)="cancel()" type="button" class="btn btn-light">
           Cancelar
         </button>

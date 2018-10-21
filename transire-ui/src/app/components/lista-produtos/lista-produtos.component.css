@@ -1,3 +1,6 @@
 th.action {
     width: 180px
 }
+td img {
+    cursor: zoom-in;
+}

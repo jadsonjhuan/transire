@@ -9,7 +9,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class CadastroProdutoComponent implements OnInit {
 
-  produto = {};
+  produto = {
+    id: null,
+    codigoBarras: null,
+    descricao: null,
+    valor: null,
+    imagem: null
+  };
   @Output() showMessageProduto = new EventEmitter();
   @Output() updateList = new EventEmitter();
 
@@ -26,7 +32,8 @@ export class CadastroProdutoComponent implements OnInit {
       id: null,
       codigoBarras: null,
       descricao: null,
-      valor: null
+      valor: null,
+      imagem: null
     };
   }
 
@@ -40,6 +47,22 @@ export class CadastroProdutoComponent implements OnInit {
         this.newProduto();
       }
     );
+  }
+
+  onFileChange(event): void {
+    if (event.target.files) {
+      if (event.target.files[0].size > 2000000) {
+        this.showMessageProduto.emit({ type: 'danger', message: 'Imagem excede o limite de 2MB. Selecione uma nova imagem.' });
+        this.produto.imagem = null;
+      } else {
+        this.produto.imagem = null;
+        const reader = new FileReader();
+        reader.onloadend = (e: Event) => {
+          this.produto.imagem = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+      }
+    }
   }
 
   cancel() {

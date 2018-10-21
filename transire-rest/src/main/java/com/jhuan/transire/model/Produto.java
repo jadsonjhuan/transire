@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -23,6 +24,9 @@ public class Produto {
 	
 	@NotNull
 	private BigDecimal valor;
+	
+	@Lob
+	private String imagem;
 
 	public Long getId() {
 		return id;
@@ -55,6 +59,15 @@ public class Produto {
 	public void setValor(BigDecimal valor) {
 		this.valor = valor;
 	}
+
+	public String getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
+	
 	
 	
 	
