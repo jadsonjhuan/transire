@@ -1,0 +1,30 @@
+<div [hidden]="!activeForm">
+  <h4>
+    {{ !produto.id ? 'Novo' : 'Editar'}} Produto
+  </h4>
+  <div class="card">
+    <div class="row form">
+      <div class="col-3 form-group">
+        <label>Código de Barras</label>
+        <input [(ngModel)]="produto.codigoBarras" class="form-control" placeholder="Código de barras">
+      </div>
+      <div class="col-6 form-group">
+        <label>Descrição *</label>
+        <input [(ngModel)]="produto.descricao" class="form-control" placeholder="Descrição" required>
+      </div>
+      <div class="col-3 form-group">
+        <label>Valor (R$) *</label>
+        <input [(ngModel)]="produto.valor" type="number" class="form-control col-number" placeholder="0,00" required>
+      </div>
+      <div class="col-12 form-group" style="text-align: right">
+        <button (click)="cancel()" type="button" class="btn btn-light">
+          Cancelar
+        </button>
+        &nbsp;
+        <button (click)="save()" [disabled]="!produto.descricao || !produto.valor" type="button" class="btn btn-success">
+          Salvar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

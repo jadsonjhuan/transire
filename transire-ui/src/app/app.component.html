@@ -1,0 +1,9 @@
+<app-navbar></app-navbar>
+
+<div class="container" style="padding-top: 20px">
+    <app-alert #alert></app-alert>
+
+    <app-cadastro-produto #formProduto (showMessageProduto)="alert.showMessage($event)" (updateList)="listaProdutos.listAll()"></app-cadastro-produto>
+
+    <app-lista-produtos #listaProdutos (showMessage)="alert.showMessage($event)" (setProdutoForm)="formProduto.setProduto($event)"></app-lista-produtos>
+</div>

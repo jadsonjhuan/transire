@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+.col-number {
+    text-align: right;
+}
+
+.simbolo-real::before {
+    content: 'R$';
+    float: left;
+}
+
+.col-date {
+    text-align: center
+}
+body {
+    margin: 0
+}
+.card .form {
+    padding: 10px 16px
+}
