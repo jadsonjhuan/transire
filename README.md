@@ -1,9 +1,9 @@
-Projeto, teste Instituto Transire
+Projeto: Teste Instituto Transire
 
 O projeto tem como finalidade o cadastro de produtos, com as telas de listagem e cadastro, assim como opção para deletar produto.
 
 As tecnologias usadas para os projetos foram:
-Front-end: Angular6 com Bootstrap
+Front-end: Angular6 com Bootstrap(v4.1)
 Back-end: Spring Boot(Framework Java)
 Banco de Dados: MySql5
 
